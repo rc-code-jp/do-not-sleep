@@ -9,7 +9,7 @@ const requestWakeLock = async () => {
   try {
     wakeLock = await navigator.wakeLock.request('screen');
     console.log('Wake Lock is active');
-    
+
     wakeLock.addEventListener('release', () => {
       console.log('Wake Lock has been released');
       updateUI(false);
@@ -19,7 +19,7 @@ const requestWakeLock = async () => {
     updateUI(true);
   } catch (err) {
     console.error(`${err.name}, ${err.message}`);
-    alert('Failed to activate Wake Lock. Your browser might not support it or battery is too low.');
+    alert('スリープ防止の有効化に失敗しました。お使いのブラウザが対応していないか、バッテリー残量が少なすぎる可能性があります。');
     updateUI(false);
   }
 };
@@ -46,14 +46,14 @@ document.addEventListener('visibilitychange', handleVisibilityChange);
 const updateUI = (isActive) => {
   if (isActive) {
     mainContainer.classList.add('active-mode');
-    btnText.textContent = 'Deactivate';
-    statusIndicator.innerHTML = 'Status: <span>Awake & Active</span>';
-    toggleBtn.setAttribute('aria-label', 'Deactivate keep awake');
+    btnText.textContent = '無効にする';
+    statusIndicator.innerHTML = 'ステータス: <span>スリープ防止中</span>';
+    toggleBtn.setAttribute('aria-label', 'スリープ防止を無効にする');
   } else {
     mainContainer.classList.remove('active-mode');
-    btnText.textContent = 'Activate';
-    statusIndicator.innerHTML = 'Status: <span>Normal</span>';
-    toggleBtn.setAttribute('aria-label', 'Activate keep awake');
+    btnText.textContent = '有効にする';
+    statusIndicator.innerHTML = 'ステータス: <span>通常</span>';
+    toggleBtn.setAttribute('aria-label', 'スリープ防止を有効にする');
   }
 };
 

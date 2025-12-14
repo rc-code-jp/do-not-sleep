@@ -1,37 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do Not Sleep - Keep Your Screen Awake</title>
-    <meta name="description" content="Prevent your computer or phone screen from turning off with this simple tool. No installation required.">
+    <title>画面スリープ防止 - Do Not Sleep</title>
+    <meta name="description" content="PCやスマートフォンの画面が勝手に消えるのを防ぐ無料ツールです。インストール不要、ブラウザを開くだけでスリープを防止します。">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rc-code-jp.github.io/do-not-sleep/">
+    <meta property="og:title" content="画面スリープ防止 - Do Not Sleep">
+    <meta property="og:description" content="PCやスマートフォンの画面が勝手に消えるのを防ぐ無料ツールです。インストール不要、ブラウザを開くだけでスリープを防止します。">
+    <meta property="og:image" content="https://rc-code-jp.github.io/do-not-sleep/assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rc-code-jp.github.io/do-not-sleep/">
+    <meta property="twitter:title" content="画面スリープ防止 - Do Not Sleep">
+    <meta property="twitter:description" content="PCやスマートフォンの画面が勝手に消えるのを防ぐ無料ツールです。インストール不要、ブラウザを開くだけでスリープを防止します。">
+    <meta property="twitter:image" content="https://rc-code-jp.github.io/do-not-sleep/assets/og-image.png">
+
+    <!-- Favicon (Emoji as SVG) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☀️</text></svg>">
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <main class="container">
         <header>
             <h1>Do Not Sleep</h1>
-            <p class="subtitle">Keep your screen awake safely</p>
+            <p class="subtitle">画面の自動消灯を防止します</p>
         </header>
 
         <div class="control-panel">
-            <button id="toggleBtn" class="toggle-btn" aria-label="Toggle keep awake">
+            <button id="toggleBtn" class="toggle-btn" aria-label="スリープ防止を有効にする">
                 <span class="icon">
                     <!-- Sun icon for awake state -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
                 </span>
-                <span id="btnText">Activate</span>
+                <span id="btnText">有効にする</span>
             </button>
-            <div id="statusIndicator" class="status">Status: <span>Normal</span></div>
+            <div id="statusIndicator" class="status">ステータス: <span>通常</span></div>
         </div>
 
         <footer>
-            <p>Uses Screen Wake Lock API</p>
+            <p>Screen Wake Lock API を使用しています</p>
         </footer>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
